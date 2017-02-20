@@ -1,0 +1,258 @@
+
+/*General*/
+
+.center {
+    text-align: center;
+}
+
+
+.usericon {
+    background-image: url(https://cdn4.iconfinder.com/data/icons/STROKE/education_icons/png/400/school_events.png);
+    height: 150px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+.formuser {
+    width: 50%;
+}
+.row span {
+    font-size: 40px;
+} 
+.form-group {
+    margin-left:20px;
+}
+
+/*Menu*/
+* {
+    padding:0;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:lightslategrey !important;
+}
+
+.menu_bar {
+    display:none;
+}
+
+header {
+    width: 100%;
+}
+
+header nav {
+    background:#3372FF;
+    z-index:1000;
+    max-width: 1000px;
+    width:95%;
+    margin:20px auto;
+}
+
+header nav ul {
+    list-style:none;
+}
+
+header nav ul li {
+    display:inline-block;
+    position: relative;
+}
+
+header nav ul li:hover {
+    background:#3372FF;
+}
+
+header nav ul li a {
+    color:#fff;
+    display:block;
+    text-decoration:none;
+    padding: 20px;
+}
+
+header nav ul li a span {
+    margin-right:10px;
+}
+
+header nav ul li:hover .children {
+    display:block;
+}
+
+header nav ul li .children {
+    display: none;
+    background:#2048A3;
+    position: absolute;
+    width: 150%;
+    z-index:1000;
+}
+
+header nav ul li .children li {
+    display:block;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li .children li a {
+    display: block;
+}
+
+header nav ul li .children li a span {
+    float: right;
+    position: relative;
+    top:3px;
+    margin-right:0;
+    margin-left:10px;
+}
+
+header nav ul li .caret {
+    position: relative;
+    top:3px;
+    margin-left:10px;
+    margin-right:0px;
+}
+
+/*@media screen and (max-width: 767px)*/
+@media screen and (max-width: 767px) {
+    body {
+        padding-top:80px;
+    }
+
+    .formuser {
+        display: block;
+
+    }
+    .menu_bar {
+        display:block;
+        width:100%;
+        position: fixed;
+        top:0;
+        background:#3372FF;
+    }
+
+    .menu_bar .bt-menu {
+        display: block;
+        padding: 20px;
+        color: #fff;
+        overflow: hidden;
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .menu_bar span {
+        float:left;
+        font-size: 40px;
+    }
+
+    header nav {
+        width: 70%;
+        height: calc(100% - 80px);
+        position: fixed;
+        right:100%;
+        margin: 0;
+        overflow: scroll;
+    }
+
+    header nav ul li {
+        display: block;
+        border-bottom:1px solid rgba(255,255,255,.5);
+    }
+
+    header nav ul li a {
+        display: block;
+    }
+
+    header nav ul li:hover .children {
+        display: none;
+    }
+
+    header nav ul li .children {
+        width: 100%;
+        position: relative;
+    }
+
+    header nav ul li .children li a {
+        margin-left:20px;
+    }
+
+    header nav ul li .caret {
+        float: right;
+    }
+}
+
+/*Teams*/
+.fatherteams p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logoteams img {
+    height: 200px;
+}
+.info-team {
+    display: none;
+    text-align: center;
+}
+
+
+
+
+/*Events*/
+.father {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#logos {
+    display: flex;
+    flex-direction: row;
+}
+#logos img {
+    height: 150px;
+}
+.datelogo {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    text-decoration-color: black;
+}
+.info {
+    display: none;
+}
+.match-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+@media screen and (orientation: landscape) {
+    .father {
+        flex-direction: row;
+        width: 100%;
+    }
+    #logos {
+        display: flex;
+        flex-direction: row;
+    }
+    .datelogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-left: 40px;
+    }
+    .match-info {  
+        display: flex;
+        flex-direction:column;
+        justify-content: flex-end;
+        flex-grow: 2;
+        margin-right: 40px;
+        text-align: center;
+    }
+    .info {
+        display: none;
+    }
+}

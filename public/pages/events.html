@@ -1,0 +1,58 @@
+<div class="container">
+
+    <form>
+        <div class="form-group">
+            <label for="sel1">Select list (select one):</label>
+            <select class="form-control" id="sel1">
+                <option>All</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+
+
+<div ng-controller="matchesController">
+
+    <div class="father" ng-repeat="match in matches" > 
+
+        <div class="datelogo" ng-click="pulsar(match)">
+
+            <p>{{ match.date }}</p>
+
+            <div id="logos">
+                <p><img src="{{ match.logolocal }}"></p>
+                <p><img src="{{ match.logovisitant }}"></p>
+            </div>       
+
+        </div>
+
+        <div class="match-info">
+
+            <div class="info" id="{{match.id}}"> {{match.info}} <iframe src="https://www.google.com/maps/d/embed?mid=1x691Qo-47hH5NpPE0tYyQ_qqAIQ" width="340" height="240"></iframe></div>
+        </div>          
+
+    </div>
+
+</div>
+
+
+<div class="col-xs-12 center">
+    <h1>Upcoming Events</h1>
+
+    <p>August 4
+
+        NYSL Fundraiser
+
+        August 16
+
+        Season Kick-off: Meet the Teams
+
+        September 1
+
+        First Game of the Season (Check Game Schedule for details)</p>
+</div>

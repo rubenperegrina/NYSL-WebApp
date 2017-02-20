@@ -1,0 +1,16 @@
+<div ng-controller="teamsController">
+
+    <div class="fatherteams" ng-repeat="team in teams" >
+
+        <div id="logoinfoteams" ng-click="pulsar(team)">
+
+            <div id="logoteams"><p><img src="{{ team.img }}"></p></div>
+
+        </div>
+        <div class="infoteams">
+
+            <div class="info-team" id="{{team.id}}">{{team.info}}</div>
+
+        </div>
+    </div>
+</div>

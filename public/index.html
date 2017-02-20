@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <html ng-app="nyslApp">
+
+
+
+            <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+            <!--Visualizar App de forma nativa-->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+            <link rel="stylesheet" href="CSS/style.css">
+            <link rel="stylesheet" href="fonts.css">
+
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+            <!--Angular-->
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+            
+            <script src="JS/angular.js"></script>
+            
+            <!--Logo Apple-->
+            <link rel="apple-touch-icon" href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" />    
+            <link rel="apple-touch-icon" sizes="57x57" href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" />    
+            <link rel="apple-touch-icon" sizes="72x72" href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" />
+            <link rel="apple-touch-icon" sizes="114x114" href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" />    
+            <link rel="apple-touch-icon" sizes="144x144" href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" />    
+
+            <!--Logo Android-->
+            <link href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" rel="icon" sizes="192x192" />
+            <link href="https://s3.amazonaws.com/gbstool/emails/2027/nysl_logo.png?AWSAccessKeyId=AKIAJBIZLMJQ2O6DKIAA&Expires=1479546000&Signature=brUJzf8YeQVKrFjMskMahVLaJW0%3D" rel="icon" sizes="128x128" />
+
+            <title>Document</title>
+            </head>
+
+        <body>
+
+            <header>
+                <div class="menu_bar" ng-controller="titleController">
+                    <a href="" class="bt-menu"><span class="icon-menu"></span>{{pageTitle}}</a>
+                </div>
+
+                <nav>
+
+                    <div class="usericon"></div>
+                    <div class="formuser">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="usr" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="pwd" placeholder="Password">
+                            </div>
+                        </form>
+                    </div>
+
+                    <ul>
+                        <li><a href="#"><span class="icon-home"></span>Home</a></li>
+                        <li><a href="#events"><span class="icon-calendar"></span>Events</a></li>
+                        <li><a href="#messages"><span class="icon-bubbles4"></span>Messages</a></li>
+                        <li><a href="#teams"><span class="icon-users"></span>Teams</a></li>
+                        <li class="submenu">
+                            <a href="#"><span class="icon-plus"></span>More<span class="caret icon-arrow-down6"></span></a>
+                            <ul class="children">
+                                <li><a href="#registration">Registration<span class="icon-profile"></span></a></li>
+                                <li><a href="#rules">Rules<span class="icon-file-text2"></span></a></li>
+                                <li><a href="#about">About Us<span class="icon-info"></span></a></li>
+                                <li><a href="#contact">Contact<span class="icon-share"></span></a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </header>
+
+
+            <div id="main">
+
+                <div ng-view></div>
+
+            </div>
+
+            <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+            <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyCb-wT8sV1gQFpEzoN9cHbBFxBq8_Atytc",
+                    authDomain: "nysl-76432.firebaseapp.com",
+                    databaseURL: "https://nysl-76432.firebaseio.com",
+                    storageBucket: "nysl-76432.appspot.com",
+                    messagingSenderId: "1062906944987"
+                };
+                firebase.initializeApp(config);
+            </script>
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+            <script src="JS/script.js"></script>
+        </body>
+        </html>
